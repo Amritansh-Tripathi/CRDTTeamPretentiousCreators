@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+
+<!-- Mirrored from getbootstrapadmin.com/remark/base/apps/calendar/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Nov 2021 20:17:10 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap admin template">
+  <meta name="author" content="">
+
+  <title>Calendar | Remark Admin Template</title>
+
+  <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="https://getbootstrapadmin.com/remark/base/assets/images/favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../global/css/bootstrap.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/css/bootstrap-extend.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../assets/css/site.min599c.css?v4.0.2">
+
+  <!-- Skin tools (demo site only) -->
+  <link rel="stylesheet" href="../../../global/css/skintools.min599c.css?v4.0.2">
+  <script src="../../assets/js/Plugin/skintools.min599c.js?v4.0.2"></script>
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="../../../global/vendor/animsition/animsition.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/asscrollable/asScrollable.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/switchery/switchery.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/intro-js/introjs.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/slidepanel/slidePanel.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/flag-icon-css/flag-icon.min599c.css?v4.0.2">
+
+  <!-- Plugins For This Page -->
+  <link rel="stylesheet" href="../../../global/vendor/fullcalendar/fullcalendar.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/bootstrap-datepicker/bootstrap-datepicker.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/bootstrap-touchspin/bootstrap-touchspin.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/vendor/jquery-selective/jquery-selective.min599c.css?v4.0.2">
+
+  <!-- Page -->
+  <link rel="stylesheet" href="../../assets/examples/css/apps/calendar.min599c.css?v4.0.2">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="../../../global/fonts/web-icons/web-icons.min599c.css?v4.0.2">
+  <link rel="stylesheet" href="../../../global/fonts/brand-icons/brand-icons.min599c.css?v4.0.2">
+  <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="../../../global/vendor/html5shiv/html5shiv.min.js?v4.0.2"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../../../global/vendor/media-match/media.match.min.js?v4.0.2"></script>
+    <script src="../../../global/vendor/respond/respond.min.js?v4.0.2"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script src="../../../global/vendor/breakpoints/breakpoints.min599c.js?v4.0.2"></script>
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="animsition app-calendar page-aside-left">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-expand-md"
+    role="navigation">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
+        data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
+        data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+        <img class="navbar-brand-logo" src="../../assets/images/logo.png" title="Remark">
+        <span class="navbar-brand-text hidden-xs-down">Well-planned</span>
+      </div>
+      <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-search"
+        data-toggle="collapse">
+        <span class="sr-only">Toggle Search</span>
+        <i class="icon wb-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="nav-item hidden-float" id="toggleMenubar">
+            <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+              </a>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar -->
+
+        <!-- Navbar Toolbar Right -->
+        <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up"
+              aria-expanded="false" role="button">
+              <span class="flag-icon flag-icon-us"></span>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                <span class="flag-icon flag-icon-gb"></span> English</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                <span class="flag-icon flag-icon-fr"></span> French</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                <span class="flag-icon flag-icon-cn"></span> Chinese</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                <span class="flag-icon flag-icon-de"></span> German</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                <span class="flag-icon flag-icon-nl"></span> Dutch</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
+              data-animation="scale-up" role="button">
+              <span class="avatar avatar-online">
+                <img src="../../../global/portraits/5.jpg" alt="...">
+                <i></i>
+              </span>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+              <div class="dropdown-divider" role="presentation"></div>
+              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications"
+              aria-expanded="false" data-animation="scale-up" role="button">
+                <i class="icon wb-bell" aria-hidden="true"></i>
+                <span class="badge badge-pill badge-danger up">5</span>
+              </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+              <div class="dropdown-menu-header">
+                <h5>NOTIFICATIONS</h5>
+                <span class="badge badge-round badge-danger">New 5</span>
+              </div>
+
+              <div class="list-group">
+                <div data-role="container">
+                  <div data-role="content">
+                    <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                      <div class="media">
+                        <div class="pr-10">
+                          <i class="icon wb-order bg-red-600 white icon-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">A new order has been placed</h6>
+                          <time class="media-meta" datetime="2018-06-12T20:50:48+08:00">5 hours ago</time>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                      <div class="media">
+                        <div class="pr-10">
+                          <i class="icon wb-user bg-green-600 white icon-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">Completed the task</h6>
+                          <time class="media-meta" datetime="2018-06-11T18:29:20+08:00">2 days ago</time>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                      <div class="media">
+                        <div class="pr-10">
+                          <i class="icon wb-settings bg-red-600 white icon-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">Settings updated</h6>
+                          <time class="media-meta" datetime="2018-06-11T14:05:00+08:00">2 days ago</time>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                      <div class="media">
+                        <div class="pr-10">
+                          <i class="icon wb-calendar bg-blue-600 white icon-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">Event started</h6>
+                          <time class="media-meta" datetime="2018-06-10T13:50:18+08:00">3 days ago</time>
+                        </div>
+                      </div>
+                    </a>
+                    <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                      <div class="media">
+                        <div class="pr-10">
+                          <i class="icon wb-chat bg-orange-600 white icon-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">Message received</h6>
+                          <time class="media-meta" datetime="2018-06-10T12:34:48+08:00">3 days ago</time>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-menu-footer">
+                <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
+                    <i class="icon wb-settings" aria-hidden="true"></i>
+                  </a>
+                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                    All notifications
+                  </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar Right -->
+      </div>
+      <!-- End Navbar Collapse -->
+
+      <!-- Site Navbar Seach -->
+      <div class="collapse navbar-search-overlap" id="site-navbar-search">
+        <form role="search">
+          <div class="form-group">
+            <div class="input-search">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="site-search" placeholder="Search...">
+              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+                data-toggle="collapse" aria-label="Close"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Site Navbar Seach -->
+    </div>
+  </nav>
+  <div class="site-menubar">
+    <br>
+    <br>
+    <ul>
+      <li> <a class="btn btn-primary" href="http://127.0.0.1:5500/getbootstrapadmin.com/remark/base/apps/calendar/calendar.html">Your Activity </a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="site-gridmenu">
+    <div>
+      <div>
+        <ul>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/mailbox/mailbox.html">
+                <i class="icon wb-envelope"></i>
+                <span>Mailbox</span>
+              </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+                <i class="icon wb-calendar"></i>
+                <span>Calendar</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/contacts/contacts.html">
+                <i class="icon wb-user"></i>
+                <span>Contacts</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/media/overview.html">
+                <i class="icon wb-camera"></i>
+                <span>Media</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/documents/categories.html">
+                <i class="icon wb-order"></i>
+                <span>Documents</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/projects/projects.html">
+                <i class="icon wb-image"></i>
+                <span>Project</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/apps/forum/forum.html">
+                <i class="icon wb-chat-group"></i>
+                <span>Forum</span>
+              </a>
+          </li>
+          <li>
+            <a href="https://getbootstrapadmin.com/remark/base/index.html">
+                <i class="icon wb-dashboard"></i>
+                <span>Dashboard</span>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Page -->
+  <div class="page">
+    <div class="container">
+        <h1 style="color: dodgerblue;">Your Nutrition and body status</h1>
+        <form name="basalForm" id="basalForm">
+          <div class="row">
+            <div class="col">
+              <ul class="questions">
+                <br>
+                <br>
+                <h2 style="color: black;">Please answer the questions here</h2>
+                <li>Your Gender <select name="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></li>
+                <li>Age (Years) <input type="number" name="age" maxlength="3" size="3" required></li>
+                <li>Your weight (lbs)<input type="number" name="weight" maxlength="3" size="3" required></li>
+                <li>Your Height (inches)<input type="number" name="height" maxlength="3" size="3" required></li>
+                <li>Your Activity level (PAL)
+                    <select name="activityLevel">
+                        <option value="sedentary">Sedentary (less than 30min a week)</option>
+                        <option value="lightExercise">Light exercise (90min a week) </option>
+                        <option value="moderateExercise">Moderate exercise (aerobic exercise, 120min a week)</option>
+                        <option value="veryActive">Very active (150min a week)</option>
+                        <option value="extreme">Extreme (Athlete status)</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="buttons">
+                <input type="reset" value="Reset" />
+                <input type="button" value="Calculate calorie levels"
+                    onClick="calculateBasal(); calculatePal(); calculateBmi(); weightCat(); eat();" id="calculate">
+            </div>
+            </div>
+
+            <div class="col">
+              <ul class="answers">
+                <br>
+                <br>
+                <h2>Your requirements</h2>
+                <li>Your body needs at rest during a typical day <input type="text" name="basal" size="10"></li>
+                <li>Calories burned during a typical day<input type="text" name="pal" size="10"><cite>Based on your
+                        activity
+                        level (PAL)</cite></li>
+                <li>Your body should lose (per day) approx. <input type="text" name="calLose" size="10"></li>
+
+                <li>Your BMI (Body Mass Index) <input type="text" name="bmi" size="10"></li>
+                <li>Your weight category <input type="text" name="weightCategory" size="10"></li>
+            </ul>
+            </div>
+          </div>
+        </form>
+        <br>
+        <br>
+        <br>
+        <div class="message" id="message">
+
+            <h2>Did you know?<h3>If you lose 500 Kcals a day, you would lose about 1lb of weight a week.</h3></h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>For more qurries <a href="#" style="color:mediumturquoise;">contact</a>our experts</h1>
+        </div>
+        <!--message-->
+
+    </div> <!-- container-->
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-right">
+      Created with <i class="red-600 wb wb-heart"></i> by <a href="https://themeforest.net/user/creation-studio">Team Pretentious Creators</a>
+    </div>
+  </footer>
+  <!-- Core  -->
+  <script src="../../../global/vendor/babel-external-helpers/babel-external-helpers599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/jquery/jquery.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/popper-js/umd/popper.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/bootstrap/bootstrap.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/animsition/animsition.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/mousewheel/jquery.mousewheel599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/asscrollbar/jquery-asScrollbar.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/asscrollable/jquery-asScrollable.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/ashoverscroll/jquery-asHoverScroll.min599c.js?v4.0.2"></script>
+
+  <!-- Plugins -->
+  <script src="../../../global/vendor/switchery/switchery.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/intro-js/intro.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/screenfull/screenfull599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/slidepanel/jquery-slidePanel.min599c.js?v4.0.2"></script>
+
+  <!-- Plugins For This Page -->
+  <script src="../../../global/vendor/jquery-ui/jquery-ui.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/moment/moment.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/fullcalendar/fullcalendar.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/jquery-selective/jquery-selective.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/bootstrap-datepicker/bootstrap-datepicker.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/bootstrap-touchspin/bootstrap-touchspin.min599c.js?v4.0.2"></script>
+  <script src="../../../global/vendor/bootbox/bootbox.min599c.js?v4.0.2"></script>
+
+  <!-- Scripts -->
+  <script src="../../../global/js/Component.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Base.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Config.min599c.js?v4.0.2"></script>
+
+  <script src="../../assets/js/Section/Menubar.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/Section/GridMenu.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/Section/Sidebar.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/Section/PageAside.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/Plugin/menu.min599c.js?v4.0.2"></script>
+
+  <!-- Config -->
+  <script src="../../../global/js/config/colors.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/config/tour.min599c.js?v4.0.2"></script>
+  <script>
+    Config.set('assets', '../../assets');
+  </script>
+
+  <!-- Page -->
+  <script src="../../assets/js/Site.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/asscrollable.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/slidepanel.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/switchery.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/bootstrap-touchspin.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/bootstrap-datepicker.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/material.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/action-btn.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/editlist.min599c.js?v4.0.2"></script>
+  <script src="../../../global/js/Plugin/bootbox.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/Site.min599c.js?v4.0.2"></script>
+  <script src="../../assets/js/App/Calendar.min599c.js?v4.0.2"></script>
+  <script src="../../assets/examples/js/apps/calendar.min599c.js?v4.0.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script>
+      
+      var options = {
+          series: [76, 67, 61, 90],
+          chart: {
+          height: 390,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            offsetY: 0,
+            startAngle: 0,
+            endAngle: 270,
+            hollow: {
+              margin: 5,
+              size: '30%',
+              background: 'transparent',
+              image: undefined,
+            },
+            dataLabels: {
+              name: {
+                show: false,
+              },
+              value: {
+                show: false,
+              }
+            }
+          }
+        },
+        colors: ['green', 'red', '#39539E', '#0077B5'],
+        labels: ['completed', 'Missed', 'nutrition', 'calories'],
+        legend: {
+          show: true,
+          floating: true,
+          fontSize: '16px',
+          position: 'left',
+          offsetX: 30,
+          offsetY: 15,
+          labels: {
+            useSeriesColors: true,
+          },
+          markers: {
+            size: 0
+          },
+          formatter: function(seriesName, opts) {
+            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+          },
+          itemMargin: {
+            vertical: 3
+          }
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            legend: {
+                show: false
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '../../../../../www.google-analytics.com/analytics.js',
+      'ga');
+
+    ga('create', 'UA-65522665-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>
+    function calculateBasal() {
+    var sex = document.basalForm.sex.value;
+    var age = document.basalForm.age.value;
+    var weight = document.basalForm.weight.value;
+    var height = document.basalForm.height.value;
+    var activityLevel = document.basalForm.activityLevel.value;
+
+
+    if (document.basalForm.sex.value == "female") {
+        basal = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+        return document.basalForm.basal.value = basal.toFixed(2) + " Kcals";
+    } else {
+        basal = 66.47 + (6.23 * weight) + (12.7 * height) - (6.755 * age);
+        return document.basalForm.basal.value = basal.toFixed(2) + " Kcals";
+    };
+}
+
+
+
+function calculatePal() {
+    var sex = document.basalForm.sex.value;
+    var age = document.basalForm.age.value;
+    var weight = document.basalForm.weight.value;
+    var height = document.basalForm.height.value;
+    var activityLevel = document.basalForm.activityLevel.value;
+
+
+    if (document.basalForm.activityLevel.value == "sedentary") {
+        activityLevel = 1.2
+        var pal = basal * activityLevel;
+        return document.basalForm.pal.value = pal.toFixed(2) + " Kcals";
+    } else if (document.basalForm.activityLevel.value == "lightExercise") {
+        activityLevel = 1.375
+        var pal = basal * activityLevel;
+        return document.basalForm.pal.value = pal.toFixed(2) + " Kcals";
+    } else if (document.basalForm.activityLevel.value == "moderateExercise") {
+        activityLevel = 1.55
+        var pal = basal * activityLevel;
+        return document.basalForm.pal.value = pal.toFixed(2) + " Kcals";
+    } else if (document.basalForm.activityLevel.value == "veryActive") {
+        activityLevel = 1.725
+        var pal = basal * activityLevel;
+        return document.basalForm.pal.value = pal.toFixed(2) + " Kcals";
+    } else {
+        activityLevel = 1.9
+        var pal = basal * activityLevel;
+        return document.basalForm.pal.value = pal.toFixed(2) + " Kcals";
+    }
+}
+
+function calculateBmi() {
+    var height = document.basalForm.height.value;
+    var weight = document.basalForm.weight.value;
+    var bmi = (weight / (height * height)) * 703;
+    return document.basalForm.bmi.value = bmi.toFixed(2);
+}
+
+function weightCat() {
+    bmi = document.basalForm.bmi.value;
+
+    if (bmi > 39.9) {
+        return document.basalForm.weightCategory.value = "Morbidly obese";
+    } else if (bmi > 29.9) {
+        return document.basalForm.weightCategory.value = "Obese";
+    } else if (bmi > 24.9) {
+        return document.basalForm.weightCategory.value = "Overweight";
+    } else if (bmi > 18.5) {
+        return document.basalForm.weightCategory.value = "Normal healthy";
+    } else {
+        return document.basalForm.weightCategory.value = "Underweight";
+    };
+
+};
+
+function eat() {
+    var pal = document.basalForm.pal.value;
+    var palx = parseInt(pal, 10);
+    console.log(palx);
+    var basal = document.basalForm.basal.value;
+    var basalx = parseInt(basal, 10);
+    var calLose = palx - basalx;
+    return document.basalForm.calLose.value = "- " + calLose + " Kcals";
+}
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+
+<!-- Mirrored from getbootstrapadmin.com/remark/base/apps/calendar/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Nov 2021 20:17:29 GMT -->
+</html>
